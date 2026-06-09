@@ -1,0 +1,22 @@
+{
+  "name": "vigilai-bot",
+  "version": "1.0.0",
+  "description": "VigilAI - WhatsApp Scam Detection Bot powered by Twilio",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "node src/test/testScamDetector.js"
+  },
+  "keywords": ["whatsapp", "bot", "scam", "fraud", "twilio", "vigilai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "twilio": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
