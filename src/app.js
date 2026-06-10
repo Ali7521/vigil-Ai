@@ -19,6 +19,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// Serve static files for the Web UI
+app.use(express.static('public'));
+
 // Request logging
 app.use((req, res, next) => {
   if (req.path !== '/health') {
@@ -39,6 +42,19 @@ app.get('/health', (req, res) => {
     version: '1.0.0',
     uptime: process.uptime(),
   });
+});
+
+// Web UI API endpoint
+const { analyzeMessage } = require('./services/scamDetector');
+const { formatResponse } = require('./services/responseFormatter');
+
+app.post('/api/analyze', (req, res) => {
+  const { text } = req.body;
+  if (!text) return res.json({ response: 'Please provide some text to analyze.' });
+  
+  const result = analyzeMessage(text);
+  const formatted = formatResponse(result);
+  res.json({ response: formatted, status: result.status });
 });
 
 // Webhook routes
