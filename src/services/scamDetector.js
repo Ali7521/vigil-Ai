@@ -38,6 +38,11 @@ const SCAM_PATTERNS = [
     keywords: ['paisa aa raha hai', 'amount credited', 'cashback', 'refund pending', 'claim refund', 'upi collect', 'pay ₹1 get', 'pay 1 rupee', 'send money to receive', 'google pay offer', 'phonepe cashback'],
     reason: 'Paisa receive karne ke liye kabhi pay nahi karna hota. UPI scam hai yeh.',
     advice: 'Paisa lene ke liye kabhi UPI se payment mat karo. Cashback ke liye koi paise nahi mangta.'
+  },
+  {
+    keywords: ['business proposal', '3x return', 'double your money', 'crypto investment', 'bitcoin', 'guaranteed profit', 'invest in scheme', 'legal business', 'earn profit in 30 days', '30 days returns', 'high returns'],
+    reason: 'Asli business WhatsApp pe random logo ko guarantee wale returns offer nahi karte. Yeh ek investment ya ponzi scam hai.',
+    advice: 'Aise messages ko block karein. Koi bhi legal business bina risk ke 2x-3x return nahi deta.'
   }
 ];
 
