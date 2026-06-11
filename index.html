@@ -148,6 +148,20 @@
             30% { transform: translateY(-4px); }
         }
         
+        @media (max-width: 600px) {
+            body {
+                background-color: #fff;
+                align-items: stretch;
+            }
+            .container {
+                height: 100vh;
+                height: 100dvh;
+                max-width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
         /* Markdown styling inside message */
         .message strong { font-weight: bold; }
         .message em { font-style: italic; }
